@@ -1,0 +1,49 @@
+body {
+    font-family: Arial, sans-serif;
+    background: linear-gradient(to right,#b8cbea);
+    margin: 0;
+    padding: 20px;
+    color: rgb(24, 23, 23);
+    text-align: center;
+}
+
+h1 {
+    margin-bottom: 30px;
+}
+
+#parkingContainer {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 20px;
+    padding: 20px;
+}
+
+.parking {
+    background: white;
+    padding: 4px;
+    border-radius: 200px;
+    font-size: 20px;
+    font-weight: bold;
+    text-align: center;
+    cursor: pointer;
+
+    box-shadow: 0 15px 30px rgba(0,0,0,0.2);
+    transition: all 0.3s ease;
+}
+
+.parking:hover {
+    transform: translateY(-10px) scale(1.05);
+}
+
+.parking:active {
+    transform: translateY(4px);
+    box-shadow: 0 8px 15px rgba(0,0,0,0.3);
+}
+
+.no-data {
+    background: white;
+    color: #333;
+    padding: 15px;
+    border-radius: 8px;
+    display: inline-block;
+}

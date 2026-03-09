@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Parking Dashboard</title>
+    <link rel="stylesheet" href="bookslot.css">
+</head>
+
+<body>
+    <h1 class="h1">PARKING SPACE</h1>
+    <div class="slots-container" id="slotsContainer"></div>
+
+    <!-- Booking Modal -->
+    <div id="bookingModal" class="modal">
+        <div class="modal-content">
+            <h3>Enter Booking Details</h3>
+
+            <input type="text" id="userName" placeholder="Your Name">
+            <input type="text" id="carName" placeholder="Car Name">
+            <input type="text" id="plateNumber" placeholder="Plate Number">
+            <input type="text" id="phoneNumber" placeholder="Phone Number">
+            <input type="text" id="timeIn" placeholder="Time In">
+            <input type="text" id="timeOut" placeholder="Time Out">
+
+            <div class="modal-buttons">
+                <button onclick="confirmBooking()">Confirm</button>
+                <button onclick="closeForm()">Cancel</button>
+            </div>
+        </div>
+    </div>
+    <a href="../../DASHBOARD/dashboard.html" class="dashboard-link">
+        Back to Dashboard
+    </a>
+
+
+
+    <!-- Link JS -->
+    <script src="bookslot.js"></script>
+
+
+</body>
+
+</html>

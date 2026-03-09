@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Automated Parking Management System</title>
+</head>
+
+<body>
+    <!-- Link CSS -->
+    <link rel="stylesheet" href="login.css">
+
+
+    <div class="login-container">
+        <h1>Automated Parking Management System</h1>
+        <p>Enter your credentials to access the system</p>
+        <form id="loginForm">
+            <div class="form-group">
+                <label>Email</label>
+                <input type="email" id="email" placeholder="Enter your email" required>
+            </div>
+
+            <div class="form-group">
+                <label for="password">Password</label>
+                <input type="password" id="password" placeholder="Enter your password" required>
+            </div>
+
+            <button type="submit" class="login-btn">Login</button>
+
+            <p class="error" id="errorMsg"></p>
+        </form>
+
+        <p>
+            Don’t have an account?
+            <a href="signup.html">Sign Up</a>
+        </p>
+    </div>
+
+    <!-- Link JS -->
+    <script src="login.js"></script>
+
+
+
+</body>
+
+</html>

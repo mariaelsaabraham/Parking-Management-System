@@ -1,0 +1,27 @@
+.login-container {
+    width: 380px;
+    padding: 40px;
+    background: rgb(245, 245, 245);   
+}
+
+.form-group {
+    margin-bottom: 18px;
+}
+
+
+.error{
+    color: red;
+}
+
+body {
+    min-height: 100vh;
+    margin: 0;
+    background-size: cover;        /* full screen */
+    background-position: center;   /* center image */
+    background-repeat: no-repeat;  /* no repeating */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: url("IMAGES/image1.jpeg");
+}
+

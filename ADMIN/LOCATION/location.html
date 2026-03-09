@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Admin - Add Parking Location</title>
+  <link rel="stylesheet" href="location.css">
+
+  <!-- Leaflet CSS -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+
+  <!-- Leaflet JS -->
+  <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+
+  <!-- Supabase JS -->
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
+
+</head>
+
+<body>
+
+  <h2>Admin Panel - Add Parking Location</h2>
+
+  <div id="map"></div>
+
+  <div class="input-box">
+    <input type="text" id="name" placeholder="Parking Name">
+  </div>
+  <div class="input-box">
+    <input type="text" id="city" placeholder="City">
+  </div>
+  <button onclick="saveLocation()">Save Location</button>
+
+  <!-- Optional back link -->
+  <p><a href="../DASHBOARD/dashboard.html" class="back-btn">← Back to Dashboard</a></p>
+
+  <script>
+    // Connect to Supabase
+    const supabaseClient = supabase.createClient(
+      "https://ahvjvezeusaedzqljlzk.supabase.co",
+      "sb_publishable_tLf_mZd_Hu94uTUszvgILQ_tLtmtVVn"
+    );
+
+    // Initialize map
+    var map = L.map('map').setView([9.5916, 76.5222], 13);
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+      attribution: '© OpenStreetMap contributors'
+    }).addTo(map);
+
+    let selectedLat = null;
+    let selectedLng = null;
+    let marker;
+
+    // When admin clicks map
+    map.on('click', function (e) {
+      selectedLat = e.latlng.lat;
+      selectedLng = e.latlng.lng;
+
+      // Remove old marker
+      if (marker) {
+        map.removeLayer(marker);
+      }
+
+      marker = L.marker([selectedLat, selectedLng]).addTo(map);
+    });
+
+    // Save to Supabase
+    async function saveLocation() {
+      const name = document.getElementById("name").value;
+      const city = document.getElementById("city").value;
+
+      if (!selectedLat || !name || !city) {
+        alert("Please click map and fill all fields");
+        return;
+      }
+
+      const { error } = await supabaseClient
+        .from("locations")
+        .insert([
+          {
+            name: name,
+            city: city,
+            latitude: selectedLat,
+            longitude: selectedLng
+          }
+        ]);
+
+      if (error) {
+        alert("Error saving location");
+        console.log(error);
+      } else {
+        alert("Location saved successfully!");
+        // Redirect back to dashboard
+        window.location.href = 'DASHBOARD/dashboard.html';
+      }
+    }
+  </script>
+
+</body>
+
+</html>

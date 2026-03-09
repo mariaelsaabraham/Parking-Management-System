@@ -1,0 +1,79 @@
+.h1{
+    text-align: center;
+    margin-top: 50px;
+}
+
+.dashboard-link {
+    position: fixed;   /* stays inside screen */
+    bottom: 20px;
+    right: 30px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+
+body {
+    margin: 0;
+    height: 100vh;              /* full screen height */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;    /* vertical centering */
+    align-items: center;        /* horizontal centering */
+    overflow: hidden;
+    background-color: #eddef0;
+}
+
+
+
+/* Slot container */
+.slots-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    padding: 100px;
+}
+
+/* Slot card */
+.slot-card {
+    border: 1px solid #aaa;
+    padding: 10px;
+    width: 150px;
+    text-align: center;
+    background-color: white;
+}
+
+/* Status */
+.available {
+    color: green;
+}
+
+.occupied {
+    color: red;
+}
+
+/* Buttons */
+button {
+    padding: 5px 8px;
+    cursor: pointer;
+}
+
+/* Modal */
+.modal {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background-color: rgba(0, 0, 0, 0.3);
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content {
+    background-color: white;
+    padding: 15px;
+    width: 250px;
+}
+
+.modal-content input {
+    width: 100%;
+    margin-bottom: 8px;
+}

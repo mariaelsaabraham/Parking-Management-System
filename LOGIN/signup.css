@@ -1,0 +1,43 @@
+body {
+    min-height: 100vh;
+    background-color: #d1e7fb;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: Arial, sans-serif;
+    background-image: url("IMAGES/image2.jpeg");
+}
+
+.login-container {
+    width: 380px;
+    padding: 40px;
+    background: rgb(245, 245, 245);
+    border-radius: 8px;
+}
+
+.form-group {
+    margin-bottom: 18px;
+}
+
+input {
+    width: 100%;
+    padding: 8px;
+    margin-top: 5px;
+}
+
+button {
+    width: 100%;
+    padding: 10px;
+    background-color: #333;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #555;
+}
+
+.error {
+    color: red;
+}

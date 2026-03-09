@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Admin Dashboard</title>
+    <link rel="stylesheet" href="dashboard.css">
+</head>
+
+<body>
+
+    <div class="container">
+
+        <!-- Sidebar -->
+        <div class="sidebar">
+            <h2>Admin Panel</h2>
+            <ul>
+                <li onclick="showSection('dashboard')">Dashboard</li>
+                <li onclick="showSection('locations')">Locations</li>
+                <li onclick="showSection('bookings')">Bookings</li>
+                <li onclick="showSection('payments')">Payments</li>
+            </ul>
+            <a href="../../LOGIN/login.html" class="back-btn">Click to Logout</a>
+        </div>
+
+        <!-- Main Content -->
+        <div class="main-content">
+
+            <!-- Dashboard Section -->
+            <div id="dashboard" class="section active">
+                <h1>Welcome Admin</h1>
+                <p>Manage and monitor the smart parking system efficiently.</p>
+            </div>
+
+            <!-- Locations Section -->
+            <div id="locations" class="section">
+                <h1>Manage Locations</h1>
+
+                <!-- Add Location button redirects to map page -->
+                <button class="btn" onclick="goToAddLocation()">+ Add Location</button>
+
+                <div class="table-box">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Name</th>
+                                <th>City</th>
+                                <th>Latitude</th>
+                                <th>Longitude</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+                        <tbody id="tableBody"></tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- Bookings Section -->
+            <div id="bookings" class="section">
+                <h1>Bookings</h1>
+            </div>
+
+            <!-- Payments Section -->
+            <div id="payments" class="section">
+                <h1>Payments</h1>
+            </div>
+
+        </div>
+    </div>
+
+
+    <!-- Supabase JS -->
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="dashboard.js"></script>
+
+    <script>
+        function goToAddLocation() {
+            // Navigate to map page (adjust relative path)
+            window.location.href = '../LOCATION/location.html';
+        }
+    </script>
+
+
+</body>
+
+</html>
